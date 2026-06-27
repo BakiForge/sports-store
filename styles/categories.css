@@ -1,0 +1,126 @@
+/*
+ Categories
+*/
+.categories {
+  padding: 80px 10%;
+  background: linear-gradient(180deg,
+      #f8fafc 0%,
+      #e2e8f0 100%);
+}
+
+#categories {
+  scroll-margin-top: 60px;
+  /* prilagodi visini navbara */
+}
+
+.categories h2 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 50px;
+  color: rgb(32, 32, 163);
+  font-family: JetBrains Mono;
+}
+
+h2 {
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: rgb(32, 32, 163);
+  margin: 10px auto 0;
+  /* ključ za centriranje linije */
+  border-radius: 2px;
+}
+
+
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+
+.category-card {
+  position: relative;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+
+.category-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  color: white;
+}
+
+
+.category-overlay h3 {
+  font-size: 28px;
+}
+
+
+/* Hover effect */
+
+.category-card:hover img {
+  transform: scale(1.1);
+}
+
+
+.category-card:hover .category-overlay {
+  background-color: rgba(32, 32, 163, 0.45);
+}
+
+
+
+/* Responsive */
+
+@media(max-width: 900px) {
+
+  .categories-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media(max-width: 600px) {
+
+  .categories {
+    padding: 50px 20px;
+  }
+
+
+  .categories h2 {
+    font-size: 32px;
+  }
+
+
+  .categories-container {
+    grid-template-columns: 1fr;
+  }
+
+}
