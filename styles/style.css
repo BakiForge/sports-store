@@ -1,6 +1,11 @@
 /*
  Navbar
 */
+section {
+  scroll-margin-top: 60px;
+  /*Global fix for sections scroll*/
+}
+
 * {
   margin: 0;
   padding: 0;

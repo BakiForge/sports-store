@@ -6,6 +6,7 @@
   <title>SportsStore.com</title>
   <link rel="stylesheet" href="../styles/style.css">
   <link rel="stylesheet" href="../styles/categories.css">
+  <link rel="stylesheet" href="../styles/products.css">
 </head>
 <body>
   <nav class="navbar">
@@ -21,7 +22,7 @@
 
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
+            <li><a href="#products">Products</a></li>
             <li><a href="#">Contact</a></li>
             <li>
                 <a href="#" class="cart">
@@ -86,9 +87,52 @@
         </div>
     </section>
 
+    <section class="featured-products" id="products">
+          <h2 class="section-title">Featured Products</h2>
 
-    </main>
+          <div class="products-grid">
+
+            <!-- PRODUCT CARD (template za JS kasnije) -->
+            <div class="product-card">
+              <img class="product-image" src="../images/FD2722-002.jpg.webp" alt="Product image">
+
+              <div class="product-info">
+                <h3 class="product-name">Nike Air Zoom</h3>
+
+                <p class="product-desc">
+              Lightweight running shoes designed for speed and comfort.
+              </p>
+
+                <div class="product-rating">
+                  ★★★★☆ <span>(4.5)</span>
+                </div>
+
+                <p class="product-price">$120</p>
+
+                <div class="quantity-control">
+                    <select class="quantity-select">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+              </div>
 
 
+                <div class="product-bottom">
+                  <button class="add-to-cart-btn">Add to cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+</section>
+
+  </main>
 </body>
 </html>
