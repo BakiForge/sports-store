@@ -90,6 +90,11 @@
   background: white;
 }
 
+.stars-image {
+  object-fit: contain;
+  height: 20px;
+}
+
 /* BUTTON */
 .add-to-cart-btn {
   width: 100%;
