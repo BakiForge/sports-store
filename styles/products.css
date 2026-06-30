@@ -24,6 +24,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  align-items: stretch;
 }
 
 /* CARD */
@@ -33,6 +34,10 @@
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
 }
 
 .product-card:hover {
@@ -49,6 +54,9 @@
 /* INFO */
 .product-info {
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .product-name {
@@ -56,11 +64,8 @@
   margin-bottom: 8px;
 }
 
-.product-rating {
-  font-size: 14px;
-  color: #f5a623;
-  /* zvezdice */
-  margin-bottom: 6px;
+.product-desc {
+  min-height: 45px;
 }
 
 .product-rating span {
@@ -96,6 +101,10 @@
 }
 
 /* BUTTON */
+.product-bottom {
+  margin-top: auto;
+}
+
 .add-to-cart-btn {
   width: 100%;
   padding: 10px;
