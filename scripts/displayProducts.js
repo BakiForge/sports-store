@@ -47,7 +47,7 @@ export function displayProductsHTML () {
 
 
                 <div class="product-bottom">
-                  <button class="add-to-cart-btn">Add to cart</button>
+                  <button class="add-to-cart-btn js-add-to-cart-btn">Add to cart</button>
                 </div>
               </div>
             </div>
