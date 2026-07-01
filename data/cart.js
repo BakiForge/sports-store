@@ -1,26 +1,33 @@
-import { products } from './products.js';
-
 let cart = [{
   productId: '1',
   quantity: 1
-}];
+}, 
+{
+  productId: '2',
+  quantity: 2
+}
+];
 
-function addToCart (productId) {
-   let matchingItem;
+function saveToStorage () {
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
 
-   cart.forEach((cartItem)=>{
-     if(cartItem.id === matchingItem.productId) {
-       matchingItem = cartItem;
-     }
-   });
+export function addToCart (productId) {
+  let matchingItem;
 
-   if(matchingItem) {
+  cart.forEach((cartItem)=>{
+   if(productId === cartItem.productId) {
+     matchingItem = cartItem;
+   }
+  });
+
+  if(matchingItem) {
     matchingItem.quantity++;
-   } else {
+  } else {
     cart.push({
       productId: productId,
       quantity: 1
-    })
-   }
+    });
+  }
+  saveToStorage();
 }
-
