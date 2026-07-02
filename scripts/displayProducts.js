@@ -1,5 +1,6 @@
 import { products } from '../data/products.js';
 import { calculateMoney } from '../data/money.js';
+import { addToCart } from '../data/cart.js';
  
 function getStarsImage (rating) {
   const num = Number(rating);
@@ -47,7 +48,7 @@ export function displayProductsHTML () {
 
 
                 <div class="product-bottom">
-                  <button class="add-to-cart-btn js-add-to-cart-btn">Add to cart</button>
+                  <button class="add-to-cart-btn js-add-to-cart-btn" data-product-id="${product.id}">Add to cart</button>
                 </div>
               </div>
             </div>
@@ -55,4 +56,15 @@ export function displayProductsHTML () {
   });
 
   document.querySelector('.js-products-grid').innerHTML = productsHTML;
+}
+
+export function attachAddToCartListeners () {
+  const addToCartButtons = document.querySelectorAll('.js-add-to-cart-btn');
+    addToCartButtons.forEach((button)=>{
+    button.addEventListener('click',()=>{
+      const productId = button.dataset.productId;
+      addToCart(productId);
+      console.log(productId);
+   });
+ });
 }

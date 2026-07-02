@@ -1,5 +1,5 @@
-import { displayProductsHTML } from "./displayProducts.js";
+import { displayProductsHTML, attachAddToCartListeners } from "./displayProducts.js";
 import { addToCart } from "../data/cart.js";
 
 displayProductsHTML();
-addToCart();
+attachAddToCartListeners();
