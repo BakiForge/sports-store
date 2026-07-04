@@ -64,7 +64,6 @@ export function attachAddToCartListeners () {
     button.addEventListener('click',()=>{
       const productId = button.dataset.productId;
       addToCart(productId);
-      console.log(productId);
    });
  });
 }
