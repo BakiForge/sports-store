@@ -1,9 +1,14 @@
-import { cart } from "../data/cart.js";
+import { cart, saveToStorage, removeFromCart } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { calculateMoney } from '../data/money.js';
 
 export function displayCartHTML () {
   let cartHTML = '';
+
+  if(cart.length === 0) {
+    document.querySelector('.js-cart-items').innerHTML = '<p class="empty-cart">Cart is empty</p>';
+    return;
+  }
 
   cart.forEach((cartItem)=>{
     let matchingProduct;
@@ -26,7 +31,7 @@ export function displayCartHTML () {
                         <button class="qty-btn">+</button>
                       </div>
 
-                      <button class="remove-btn">Remove</button>
+                      <button class="remove-btn" data-product-id="${matchingProduct.id}">Remove</button>
                     </div>
              </div>
                `;
@@ -34,3 +39,12 @@ export function displayCartHTML () {
 
   document.querySelector('.js-cart-items').innerHTML = cartHTML;
 }
+
+ document.querySelector('.js-cart-items')
+   .addEventListener('click',(event)=>{
+     const button = event.target;
+     const productId = button.dataset.productId;
+     removeFromCart(productId);
+     saveToStorage();
+     displayCartHTML();
+   });
