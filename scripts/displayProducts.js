@@ -32,7 +32,7 @@ export function displayProductsHTML () {
                 <p class="product-price">$${calculateMoney(product.priceCents)}</p>
 
                 <div class="quantity-control">
-                    <select class="quantity-select">
+                    <select class="quantity-select js-quantity-selector">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -63,7 +63,10 @@ export function attachAddToCartListeners () {
     addToCartButtons.forEach((button)=>{
     button.addEventListener('click',()=>{
       const productId = button.dataset.productId;
-      addToCart(productId);
+      const productCard = button.closest('.product-card');
+      const quantitySelector = productCard.querySelector('.js-quantity-selector');
+      const quantity = Number(quantitySelector.value);
+      addToCart(productId, quantity);
    });
  });
 }
