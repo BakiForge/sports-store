@@ -1,4 +1,4 @@
-import { cart, saveToStorage, removeFromCart } from "../data/cart.js";
+import { cart, saveToStorage, removeFromCart, decreaseQuantity, increaseQuantity } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { calculateMoney } from '../data/money.js';
 
@@ -26,12 +26,12 @@ export function displayCartHTML () {
                       <p class="item-price">$${calculateMoney(matchingProduct.priceCents)}</p>
 
                       <div class="quantity-controls">
-                        <button class="qty-btn">-</button>
+                        <button class="qty-btn js-decrease-quantity" data-product-id="${matchingProduct.id}">-</button>
                         <span class="qty">${cartItem.quantity}</span>
-                        <button class="qty-btn">+</button>
+                        <button class="qty-btn js-increase-quantity" data-product-id="${matchingProduct.id}">+</button>
                       </div>
 
-                      <button class="remove-btn" data-product-id="${matchingProduct.id}">Remove</button>
+                      <button class="remove-btn js-remove-btn" data-product-id="${matchingProduct.id}">Remove</button>
                     </div>
              </div>
                `;
@@ -40,11 +40,30 @@ export function displayCartHTML () {
   document.querySelector('.js-cart-items').innerHTML = cartHTML;
 }
 
- document.querySelector('.js-cart-items')
-   .addEventListener('click',(event)=>{
+const cartItemContainer = document.querySelector('.js-cart-items');
+
+if(cartItemContainer) {
+   cartItemContainer.addEventListener('click',(event)=>{
      const button = event.target;
      const productId = button.dataset.productId;
-     removeFromCart(productId);
-     saveToStorage();
-     displayCartHTML();
+     
+     if(!button) {
+      return;
+     }
+
+     if(button.classList.contains('js-remove-btn')) {
+      removeFromCart(productId);
+      displayCartHTML();
+     }
+
+     if(button.classList.contains('js-decrease-quantity')) {
+       decreaseQuantity(productId);
+       displayCartHTML();
+     }
+
+     if(button.classList.contains('js-increase-quantity')) {
+       increaseQuantity(productId);
+       displayCartHTML();
+     }
    });
+}

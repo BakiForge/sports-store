@@ -43,4 +43,44 @@ export function removeFromCart (productId) {
 
   cart.length = 0;
   cart.push(...newCart);
+
+  saveToStorage();
+}
+
+// Functions for increasing and decreasing quantity of a product
+
+export function increaseQuantity (productId) {
+  let matchingItem;
+
+  cart.forEach((cartItem)=>{
+    if(productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
+
+  if(matchingItem) {
+    matchingItem.quantity++;
+  }
+
+  saveToStorage();
+}
+
+export function decreaseQuantity (productId) {
+  let matchingItem;
+
+  cart.forEach((cartItem)=>{
+    if(productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
+
+  if(matchingItem) {
+    matchingItem.quantity--;
+  }
+
+  if(matchingItem.quantity === 0) {
+    removeFromCart(productId);
+  }
+
+  saveToStorage();
 }
