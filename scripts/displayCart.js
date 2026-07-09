@@ -109,3 +109,13 @@ if(cartItemContainer) {
      }
    });
 }
+
+window.addEventListener('storage', (event)=>{
+  if(event.key === 'cart') {
+    cart.length = 0;
+    cart.push(...(JSON.parse(localStorage.getItem('cart')) || []));
+
+    displayCartHTML();
+    displayTotalHTML();
+  }
+});
