@@ -1,3 +1,4 @@
-import { displayCartHTML } from './displayCart.js';
+import { displayCartHTML, displayTotalHTML } from './displayCart.js';
 
 displayCartHTML();
+displayTotalHTML();

@@ -7,7 +7,7 @@ export const products = [{
   stars: '4.5',
   count: '128'
  }, 
- priceCents: '12000'
+ priceCents: 12000
 },
  {
  id: '2',
@@ -18,7 +18,7 @@ export const products = [{
   stars: '5',
   count: '68'
  }, 
- priceCents: '26999'
+ priceCents: 26999
 },
 {
  id: '3',
@@ -29,7 +29,7 @@ export const products = [{
   stars: '4',
   count: '35'
  }, 
- priceCents: '2399'
+ priceCents: 2399
 }
 ];
 

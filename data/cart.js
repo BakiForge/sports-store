@@ -1,3 +1,6 @@
+import { products } from './products.js';
+import { calculateMoney } from './money.js';
+
 export let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 export function saveToStorage () {
@@ -33,6 +36,10 @@ export function updateCartQuantity () {
   let cartCount = document.querySelector('.js-cart-count');
   if(cartCount) {
     cartCount.innerHTML = cartQuantity;
+  }
+  let itemsCount = document.querySelector('.js-items-count');
+  if(itemsCount) {
+    itemsCount.innerHTML = `Items (${cartQuantity})`;
   }
 }
 
@@ -81,4 +88,27 @@ export function decreaseQuantity (productId) {
   }
 
   saveToStorage();
+}
+
+export function calculateTotal (productId) {
+  let total = 0;
+
+  cart.forEach((cartItem)=>{
+    products.forEach((product)=>{
+      if(product.id === cartItem.productId) {
+        total += product.priceCents * cartItem.quantity;
+      }
+    });
+  });
+  let subtotalHTML = document.querySelector('.js-subtotal');
+    if(subtotalHTML) {
+      subtotalHTML.innerHTML = `$${calculateMoney(total)}`;
+    }
+
+    let totalHTML = document.querySelector('.js-total');
+    if(totalHTML) {
+      totalHTML.innerHTML = `$${calculateMoney(total)}`;
+    }
+  saveToStorage();
+ return total;
 }

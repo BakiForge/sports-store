@@ -1,4 +1,4 @@
-import { cart, saveToStorage, removeFromCart, decreaseQuantity, increaseQuantity } from "../data/cart.js";
+import { cart, saveToStorage, removeFromCart, decreaseQuantity, increaseQuantity, calculateTotal, updateCartQuantity } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { calculateMoney } from '../data/money.js';
 
@@ -40,6 +40,45 @@ export function displayCartHTML () {
   document.querySelector('.js-cart-items').innerHTML = cartHTML;
 }
 
+export function displayTotalHTML () {
+  let totalHTML = '';
+
+  totalHTML += `
+    <h2>Order Summary</h2>
+
+      <div class="summary-row">
+        <span class="js-items-count">Items (0)</span>
+        <span class="js-subtotal">$360</span>
+      </div>
+
+      <div class="summary-row">
+        <span>Shipping</span>
+        <span>Free</span>
+      </div>
+
+      <div class="summary-row total">
+        <span>Total</span>
+        <span class="js-total">$360</span>
+      </div>
+
+      <button class="checkout-btn">
+        Proceed to Checkout
+      </button>
+
+      <div class="payment-info">
+        <p>We accept:</p>
+        <div class="cards">
+          <span>VISA</span>
+          <span>MasterCard</span>
+          <span>PayPal</span>
+        </div>
+      </div>
+  `;
+  document.querySelector('.js-cart-summary').innerHTML = totalHTML;
+  updateCartQuantity();
+  calculateTotal();
+}
+
 const cartItemContainer = document.querySelector('.js-cart-items');
 
 if(cartItemContainer) {
@@ -54,16 +93,19 @@ if(cartItemContainer) {
      if(button.classList.contains('js-remove-btn')) {
       removeFromCart(productId);
       displayCartHTML();
+      displayTotalHTML();
      }
 
      if(button.classList.contains('js-decrease-quantity')) {
        decreaseQuantity(productId);
        displayCartHTML();
+       displayTotalHTML();
      }
 
      if(button.classList.contains('js-increase-quantity')) {
        increaseQuantity(productId);
        displayCartHTML();
+       displayTotalHTML();
      }
    });
 }
