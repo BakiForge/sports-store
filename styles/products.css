@@ -30,18 +30,29 @@
 /* CARD */
 .product-card {
   background: white;
+  border: 2px solid transparent;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  transition: 0.3s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
   cursor: pointer;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
 }
 
 .product-card:hover {
   transform: translateY(-6px);
+
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(90deg, #0700b8 0%, #00ff88 100%) border-box;
+
+  box-shadow: 0 15px 35px rgba(7, 0, 184, 0.18);
 }
 
 /* IMAGE */
