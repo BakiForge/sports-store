@@ -7,7 +7,8 @@ export const products = [{
   stars: '4.5',
   count: '128'
  }, 
- priceCents: 12000
+ priceCents: 12000,
+ category: 'running'
 },
  {
  id: '2',
@@ -18,7 +19,8 @@ export const products = [{
   stars: '5',
   count: '68'
  }, 
- priceCents: 26999
+ priceCents: 26999,
+ category: 'football'
 },
 {
  id: '3',
@@ -29,7 +31,8 @@ export const products = [{
   stars: '4',
   count: '35'
  }, 
- priceCents: 2399
+ priceCents: 2399,
+ category: 'running'
 }, 
 {
  id: '4',
@@ -40,7 +43,8 @@ export const products = [{
   stars: '4.5',
   count: '111'
  }, 
- priceCents: 2999
+ priceCents: 2999,
+ category: 'fitness'
 },
 {
  id: '5',
@@ -51,7 +55,8 @@ export const products = [{
   stars: '5',
   count: '410'
  }, 
- priceCents: 1699
+ priceCents: 1699,
+ category: 'basketball'
 }, 
 {
  id: '6',
@@ -62,7 +67,8 @@ export const products = [{
   stars: '4.5',
   count: '78'
  }, 
- priceCents: 9999
+ priceCents: 9999,
+ category: 'football'
 }, 
 {
  id: '7',
@@ -73,7 +79,8 @@ export const products = [{
   stars: '4.0',
   count: '42'
  }, 
- priceCents: 27999
+ priceCents: 27999,
+ category: 'basketall'
 },
 {
  id: '8',
@@ -84,7 +91,8 @@ export const products = [{
   stars: '4.5',
   count: '71'
  }, 
- priceCents: 2099
+ priceCents: 2099,
+ category: 'fitness'
 },
 {
  id: '9',
@@ -95,7 +103,8 @@ export const products = [{
   stars: '3.5',
   count: '200'
  }, 
- priceCents: 699
+ priceCents: 699,
+ category: 'running'
 }, 
 {
  id: '10',
@@ -106,7 +115,8 @@ export const products = [{
   stars: '5.0',
   count: '90'
  }, 
- priceCents: 6499
+ priceCents: 6499,
+ category: 'football'
 }, 
 {
  id: '11',
@@ -117,7 +127,8 @@ export const products = [{
   stars: '4.5',
   count: '15'
  }, 
- priceCents: 1299
+ priceCents: 1299,
+ category: 'basketball'
 },
 {
  id: '12',
@@ -128,7 +139,8 @@ export const products = [{
   stars: '4.5',
   count: '55'
  }, 
- priceCents: 1399
+ priceCents: 1399,
+ category: 'fitness'
 }
 ];
 
