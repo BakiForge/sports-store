@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../styles/categories.css">
   <link rel="stylesheet" href="../styles/products.css">
 </head>
-<body>
+<body id="home">
   <nav class="navbar">
         <div class="logo">
             <img class="store-logo" title="logo" src="../images/store-logo.png">
@@ -23,7 +23,7 @@
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#products">Products</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#footer">Contact</a></li>
             <li>
                 <a href="cart.html" class="cart js-cart">
                     Cart
@@ -42,7 +42,7 @@
 
         <div class="hero-buttons">
           <a href="#products" class="btn primary">Shop Now</a>
-          <a href="#categories" class="btn secondary">View Categories</a>
+          <a href="#categories" class="btn secondary">Browse Categories</a>
         </div>
       </div>
 
@@ -51,7 +51,7 @@
       </div>
     </section>
 
-    <section class="categories" id="categories">
+    <section class="categories js-categories" id="categories">
 
         <h2>Categories</h2>
 
@@ -97,7 +97,81 @@
             </div>
           </div>
    </section>
-  </main>
+
+    <section class="why-choose-us">
+    <div class="container">
+        <h2 class="section-title">Why Choose Us</h2>
+
+        <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon"><img class="feature-img" src="../images/delivery.png"></div>
+            <h3>Free Shipping</h3>
+            <p>Enjoy fast and free shipping on all of our products.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon"><img class="feature-img" src="../images/secure.png"></div>
+            <h3>Secure Payment</h3>
+            <p>Your payments are protected with secure checkout.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon"><img class="feature-img" src="../images/return.png"></div>
+            <h3>Easy Returns</h3>
+            <p>Return your order within 30 days.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon"><img class="feature-img" src="../images/service.png"></div>
+            <h3>24/7 Support</h3>
+            <p>Our support team is always ready to help you.</p>
+         </div>
+        </div>
+     </div>
+    </section>
+
+   <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- Logo -->
+            <div class="footer-brand">
+            <a href="#home">
+                <img src="../images/store-logo.png" alt="SportsStore Logo">
+            </a>
+            </div>
+
+
+            <!-- Links -->
+            <div class="footer-links">
+            <h3>Links</h3>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            </div>
+
+
+            <!-- Contact -->
+            <div class="footer-contact">
+            <h3>Contact</h3>
+
+            <p><img class="contact-image" src="../images/email-box.png"> support@sportsstore.com</p>
+            <p><img  class="contact-image" src="../images/phone-con.png"> +381 60 123 4567</p>
+            <p><img class="contact-image" src="../images/location.png"> Serbia</p>
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>© 2026 SportsStore. All rights reserved. By BakiForge.</p>
+        </div>
+
+    </footer>    
+   </main>
   <script src="../scripts/store.js" type="module"></script>
 </body>
 </html>
