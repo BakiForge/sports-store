@@ -90,25 +90,35 @@ export function decreaseQuantity (productId) {
   saveToStorage();
 }
 
-export function calculateTotal (productId) {
+export function calculateTotal () {
+  let subTotal = 0;
   let total = 0;
+  let shippingCents = 300; // Variable for setting shipping price
 
   cart.forEach((cartItem)=>{
     products.forEach((product)=>{
       if(product.id === cartItem.productId) {
-        total += product.priceCents * cartItem.quantity;
+        subTotal += product.priceCents * cartItem.quantity;
       }
     });
   });
+
+  total += subTotal + shippingCents;
+
+  let shippingHTML = document.querySelector('.js-shipping');
+  if(shippingHTML) {
+    shippingHTML.innerHTML = `$${calculateMoney(shippingCents)}`;
+  }
+
   let subtotalHTML = document.querySelector('.js-subtotal');
     if(subtotalHTML) {
-      subtotalHTML.innerHTML = `$${calculateMoney(total)}`;
+      subtotalHTML.innerHTML = `$${calculateMoney(subTotal)}`;
     }
 
     let totalHTML = document.querySelector('.js-total');
     if(totalHTML) {
       totalHTML.innerHTML = `$${calculateMoney(total)}`;
     }
-  saveToStorage();
+    saveToStorage();
  return total;
 }
