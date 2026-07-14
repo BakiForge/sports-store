@@ -8,6 +8,10 @@
       #e2e8f0 100%);
 }
 
+.categories-heading {
+  font-family: syne;
+}
+
 #categories {
   scroll-margin-top: 60px;
   /* prilagodi visini navbara */
