@@ -53,7 +53,7 @@ export function displayTotalHTML () {
 
       <div class="summary-row">
         <span>Shipping</span>
-        <span>Free</span>
+        <span class="js-shipping">Free</span>
       </div>
 
       <div class="summary-row total">
