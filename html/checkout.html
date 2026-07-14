@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | SportsStore</title>
+    <link rel="stylesheet" href="../styles/checkout.css">
+</head>
+<body>
+
+<div class="checkout-container">
+
+    <h1>Checkout</h1>
+
+    <div class="checkout-grid">
+
+        <!-- LEFT SIDE -->
+        <div class="checkout-left">
+
+            <section class="section">
+
+                <h2>Customer Information</h2>
+
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+                <input type="tel" placeholder="Phone Number">
+
+            </section>
+
+            <section class="section">
+
+                <h2>Shipping Address</h2>
+
+                <input type="text" placeholder="Country">
+                <input type="text" placeholder="City">
+                <input type="text" placeholder="Street Address">
+                <input type="text" placeholder="ZIP Code">
+
+            </section>
+
+            <section class="section">
+
+                <h2>Payment Method</h2>
+
+                <label>
+                    <input type="radio" name="payment">
+                    Credit / Debit Card
+                </label>
+
+                <label>
+                    <input type="radio" name="payment">
+                    PayPal
+                </label>
+
+                <label>
+                    <input type="radio" name="payment">
+                    Cash on Delivery
+                </label>
+
+            </section>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="checkout-right js-checkout-right">
+       </div>
+
+<script src="../scripts/checkout.js" type="module"></script>
+</body>
+</html>
