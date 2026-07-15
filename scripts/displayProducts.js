@@ -11,7 +11,7 @@ function getStarsImage (rating) {
 }
 
 export function displayProductsHTML (product) {
-  
+
     return `
      <div class="product-card">
               <img class="product-image" src="${product.image}" alt="${product.name}">
@@ -94,6 +94,5 @@ function displayAllProducts () {
   products.forEach((product)=>{
     productContainer.innerHTML += displayProductsHTML(product);
   });
-  attachAddToCartListeners();
 }
 displayAllProducts();
