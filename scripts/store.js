@@ -1,7 +1,6 @@
 import { displayProductsHTML, attachAddToCartListeners } from "./displayProducts.js";
 import { cart, addToCart, updateCartQuantity } from "../data/cart.js";
 
-displayProductsHTML();
 attachAddToCartListeners(); 
 updateCartQuantity();
 
