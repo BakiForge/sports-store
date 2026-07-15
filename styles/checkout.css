@@ -15,8 +15,24 @@ body {
     margin: auto;
 }
 
+.back-to-cart {
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 1.1em;
+    transition: 0.3s;
+}
+
+.back-to-cart:hover {
+    color: #575757;
+    text-shadow: 15px 10px 15px rgba(0, 0, 0, 0.25);
+    transform: translateX(-4px);
+}
+
 .checkout-container h1 {
     margin-bottom: 30px;
+    font-family: syne;
 }
 
 .checkout-grid {

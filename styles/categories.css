@@ -9,7 +9,7 @@
 }
 
 .categories-heading {
-  font-family: syne;
+
 }
 
 #categories {
@@ -22,7 +22,7 @@
   font-size: 42px;
   margin-bottom: 50px;
   color: rgb(32, 32, 163);
-  font-family: JetBrains Mono;
+  font-family: syne;
 }
 
 h2 {
@@ -84,6 +84,7 @@ h2::after {
 
 .category-overlay h3 {
   font-size: 28px;
+  font-family: syne;
 }
 
 

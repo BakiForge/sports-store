@@ -195,11 +195,11 @@ body {
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  font-family: JetBrains Mono;
 }
 
 .primary {
   background-color: #00cccc;
+  font-family: syne;
   color: white;
   transition: color 0.35s,
     background-color 0.35s,
@@ -210,7 +210,6 @@ body {
 .primary:hover {
   color: #00cccc;
   background-color: white;
-  font-weight: 900;
 }
 
 .primary:active {
@@ -220,6 +219,7 @@ body {
 .secondary {
   border: 2px solid white;
   color: white;
+  font-family: syne;
   transition: color 0.35s,
     background-color 0.35s,
     opacity 0.15s;
