@@ -1,4 +1,4 @@
-import { cart, saveToStorage, removeFromCart, decreaseQuantity, increaseQuantity, calculateTotal, updateCartQuantity } from "../data/cart.js";
+import { cart, removeFromCart, decreaseQuantity, increaseQuantity, calculateTotal, updateCartQuantity } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { calculateMoney } from '../data/money.js';
 
@@ -61,22 +61,25 @@ export function displayTotalHTML () {
         <span class="js-total">$360</span>
       </div>
 
-      <button class="checkout-btn">
+      <button class="checkout-btn js-checkout-btn">
         Proceed to Checkout
-      </button>
+      </button>  
 
       <div class="payment-info">
-        <p>We accept:</p>
+        <p class="payment-title">We accept:</p>
         <div class="cards">
-          <span>VISA</span>
-          <span>MasterCard</span>
-          <span>PayPal</span>
+          <img class="payment-method" src="../images/visa-logo.png">
+          <img class="payment-method" src="../images/paypal-logo.webp">
+          <img class="payment-method" src="../images/mastercard-logo.png">
         </div>
       </div>
   `;
   document.querySelector('.js-cart-summary').innerHTML = totalHTML;
   updateCartQuantity();
   calculateTotal();
+  document.querySelector('.js-checkout-btn').addEventListener('click', ()=>{
+      location.href = 'checkout.html';
+  })
 }
 
 const cartItemContainer = document.querySelector('.js-cart-items');
