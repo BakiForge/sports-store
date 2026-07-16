@@ -19,6 +19,7 @@ html {
 body {
   font-family: Arial, sans-serif;
   overflow-x: hidden;
+  padding-top: 70px;
 }
 
 .navbar {
@@ -31,9 +32,11 @@ body {
   color: white;
   border-bottom: 1px solid rgba(0, 255, 136, 0.25);
   box-shadow: 0 2px 10px rgba(0, 255, 136, 0.15);
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
+  left: 0;
+  width: 100%;
 }
 
 .logo {
