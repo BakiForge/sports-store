@@ -7,7 +7,7 @@ function getStarsImage (rating) {
 
   const rounded = Math.round(num * 2) / 2;
 
-  return `../images/ratings/rating-${rounded * 10}.png`;
+  return `images/ratings/rating-${rounded * 10}.png`;
 }
 
 export function displayProductsHTML (product) {

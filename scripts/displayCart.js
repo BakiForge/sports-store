@@ -68,9 +68,9 @@ export function displayTotalHTML () {
       <div class="payment-info">
         <p class="payment-title">We accept:</p>
         <div class="cards">
-          <img class="payment-method" src="../images/visa-logo.png">
-          <img class="payment-method" src="../images/paypal-logo.webp">
-          <img class="payment-method" src="../images/mastercard-logo.png">
+          <img class="payment-method" src="images/visa-logo.png">
+          <img class="payment-method" src="images/paypal-logo.webp">
+          <img class="payment-method" src="images/mastercard-logo.png">
         </div>
       </div>
   `;
