@@ -161,8 +161,6 @@ body {
   min-height: 100vh;
   background-color: rgb(32, 32, 163);
   color: rgb(255, 255, 255);
-  overflow-x: hidden;
-  overflow-y: visible;
 }
 
 .hero-title {
